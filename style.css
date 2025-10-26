@@ -1,0 +1,479 @@
+
+
+:root {
+    /* Light Mode Colors (Default) */
+    --background-color: #FFFFFF;
+    --text-color: #1a1a1a;
+    --border-color: #e0e0e0;
+    --link-color: #0077cc;
+    --secondary-text: #666666;
+    
+    /* Navigation Pill Colors - Light Mode */
+    --nav-bg: #3a3a3a;
+    --nav-text: #ffffff;
+}
+
+/* Dark Mode Overrides */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: #121212;
+        --text-color: #f0f0f0;
+        --border-color: #333333;
+        --link-color: #88c0ff;
+        --secondary-text: #aaaaaa;
+        
+        /* Navigation Pill Colors - Dark Mode */
+        --nav-bg: #222222; 
+        --nav-text: #f0f0f0;
+    }
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif; 
+    line-height: 1.6;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+    padding: 20px;
+}
+
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-top: 100px; 
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: var(--text-color);
+}
+
+
+.site-header-fixed {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000; 
+}
+
+.pill-nav {
+    display: flex;
+    width: fit-content;
+    gap: 8px;
+    background: var(--bg-primary); 
+    padding: 1px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.nav-item {
+    color: var(--nav-text);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 8px 8px;
+    display: flex;
+    align-items: center;
+    gap: 0;
+    border-radius: 10px; 
+    white-space: nowrap; 
+    transition: all 0.3s ease-out; 
+}
+
+.nav-icon {
+    font-size: 1.5em; 
+    padding: 0 4px; 
+}
+
+/* Hide the text by default */
+.nav-text {
+    opacity: 0;
+    width: 0; /* Collapse the text element */
+    overflow: hidden;
+    padding: 0; 
+    transition: all 0.3s ease-out; 
+}
+
+/* REVEAL EFFECT ON HOVER */
+.nav-item:hover {
+    background-color: rgba(255, 255, 255, 0.1); 
+    gap: 8px; /* Create space between icon and text */
+}
+
+.nav-item:hover .nav-text {
+    opacity: 1;
+    width: auto; /* Reveal the text */
+    padding-right: 4px; 
+}
+
+/* ==================================
+   3. HERO / PROFILE SECTION
+   ================================== */
+
+
+.container {
+    display: flex;
+   justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding-top: 40px;
+}
+
+
+.left {
+    display: flex;
+    width: 400px;
+    padding: 0;
+    flex-direction: column;
+    align-items: center; 
+    gap: 24px;
+    flex: 0 0 auto;
+}
+
+.about-me {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+.flip-card {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    background-color: transparent;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    perspective: 1000px;
+    margin-left: 40px;
+}
+
+.profile-images {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    perspective: 1000px;
+}
+
+.main-photo {
+    width: 70%; 
+    height: 70%; 
+    border-radius: 50%; 
+    display: block;
+    object-fit: cover; 
+    margin-left: 70px;
+    border: 3px solid var(--border-color);
+}
+
+
+.about-me-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+h1 {
+    color: var(--text-color);
+    font-family: 'NEXO', serif; 
+    font-size: 3rem; 
+    font-weight: 700;
+    text-wrap: nowrap;
+    text-align: center;
+}
+
+.on{
+    font-size: 10px;
+    text-align: center;
+}
+
+.about {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    max-width: fit-content;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+h6 {
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin: 0;
+}
+
+.chip {
+    color: #73db67;
+    background-color: #73db6722;
+    box-shadow: inset;
+    display: flex; 
+    align-items: center; 
+    gap: 6px; 
+    border-radius: 12px; 
+    padding: 4px 10px;
+    font-size: 0.9rem;
+}
+
+
+.dot{
+    background-color: #73db67; 
+    border-radius: 50%;
+    width: 6px; 
+    height: 6px;
+}
+
+.bio {
+    color: var(--text-color);
+    font-size: 15px;
+    line-height: 1.7;
+    text-align: center;
+}
+
+.right {
+    display: flex;
+    width: 500px;
+    padding: 35px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 28px;
+    flex: 0 0 auto;
+    border-radius: 12px;
+    background: var(--bg-secondary, #1C1E1F);
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    border: 1px solid;
+    border-color: var(--border-color);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 0.6px 0.6px -1.25px, rgba(0, 0, 0, 0.16) 0px 2.4px 2.4px -2.5px, rgba(0, 0, 0, 0.06) 0px 10px 10px -4px;
+}
+
+h2{
+    margin-bottom: 8px;
+    margin-left: 15px;
+    font-size: 1.8rem;
+
+}
+
+.activity {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin-left: 15px;
+    font: 1em sans-serif;
+}
+
+.activity p {
+    position: relative;
+    display: inline-block;
+}
+
+
+.bold {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+p {
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 200; 
+    margin: 0;
+}
+
+.font{
+    font-weight: 100;
+}
+
+
+.activity-modal {
+    display: none;
+    position: absolute;
+    max-width: 100%;
+    height: auto;
+    left: 65%;
+    background-color: transparent;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    top: 20%;
+}
+
+
+
+
+.secondary-photo {
+    position: absolute;
+    width: 30%;
+    border-radius: 50%;
+    bottom: -20px;
+    right: 0;
+    border: 3px solid var(--background-color);
+}
+
+.profile-text h1 {
+   display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+}
+
+.profile-text h6 {
+    font-size: 1.2em;
+    font-weight: 400;
+    color: var(--secondary-text);
+    margin-bottom: 20px;
+}
+
+.status {
+    display: inline-block;
+    padding: 4px 10px;
+    background-color: var(--link-color);
+    color: var(--background-color);
+    font-weight: bold;
+    font-size: 0.9em;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.bio-summary {
+    font-size: 1.1em;
+    line-height: 1.7;
+}
+
+/* ==================================
+   4. CURRENT ACTIVITIES (The Boxes)
+   ================================== */
+
+.current-activities {
+    padding: 40px 0;
+}
+
+.activity-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.activity-box {
+    border: 1px solid var(--border-color);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.activity-box h3 {
+    font-size: 1em;
+    color: var(--secondary-text);
+    margin-bottom: 10px;
+}
+
+.activity-item {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.activity-image {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+/* ==================================
+   5. MAIN CONTENT & FOOTER
+   ================================== */
+
+.content-section {
+    padding: 40px 0;
+    border-top: 1px solid var(--border-color);
+}
+
+.content-section h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+footer {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 0;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.9em;
+    color: var(--secondary-text);
+}
+
+.footer-info, .social-links {
+    margin-bottom: 15px;
+}
+
+.social-links a {
+    color: var(--secondary-text);
+    margin: 0 10px;
+    font-weight: 500;
+}
+
+.dark-mode-note {
+    font-style: italic;
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+/* ==================================
+   6. MOBILE RESPONSIVENESS
+   ================================== */
+
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    .site-header-fixed {
+        /* On small screens, position the pill to the side */
+        top: 10px;
+        left: 10px;
+        transform: none;
+    }
+    
+    .profile-intro {
+        grid-template-columns: 1fr; 
+        text-align: center;
+    }
+
+    .profile-images {
+        margin-bottom: 50px; 
+    }
+
+    .main-photo {
+        width: 50%; 
+        margin: 0 auto;
+    }
+
+    .secondary-photo {
+        right: 25%; 
+    }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;700&display=swap');
