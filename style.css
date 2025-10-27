@@ -674,6 +674,10 @@ h2{
     margin: 0;
   }
 
+  .about {
+    text-align: center;
+  }
+
   .activity-modal {
     right: 0;
     left: 50%;
