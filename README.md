@@ -15,7 +15,9 @@ This portfolio reflects my focus on clean structure, responsive layouts, and tho
 ## Technologies Used
 
 
-|**Languages** | HTML, CSS || **Design Tools** | Figma || **Version Control** | Git, GitHub |
+|**Languages** | HTML, CSS |
+| **Design Tools** | Figma |
+| **Version Control** | Git, GitHub |
 
 
 
